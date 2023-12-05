@@ -1,0 +1,9 @@
+.my-background{
+    background-color: lightslategray;
+}
+
+.selected-nav{
+    color:white;
+    font-weight: 700;
+    text-decoration: underline;
+}

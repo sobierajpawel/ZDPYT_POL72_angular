@@ -1,9 +1,25 @@
 <app-navigation-custom></app-navigation-custom>
 
+<!-- 
+<h1 *ngIf="isHeadersVisible == true">Nagłowek {{paragraphText}}</h1>
+<h2 *ngIf="isHeadersVisible == false">Nagłowek 2</h2>
+<p>Tekst: {{paragraphText}}</p>
+<button class="btn btn-primary"
+(click)="clickBtn()"
+>Test</button>
 
-<h1>Nagłowek</h1>
-<h2>Nagłowek 2</h2>
-<p>Test</p>
-<button class="btn btn-primary">Test</button>
+<button 
+(click)="getBackText()"
+class="btn btn-success">Test2</button>
 
-<router-outlet></router-outlet>
+<button 
+(click)="showHeaders()"
+class="btn btn-danger">
+Pokaż nagłówki
+</button> -->
+<div style="margin-left:50px;margin-top:20px">
+    <router-outlet></router-outlet>
+</div>
+
+
+
