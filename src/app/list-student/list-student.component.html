@@ -1,6 +1,11 @@
 <h4>Lista studentów</h4>
 
-<table class="table table-hover">
+<div>
+    <button (click)="searchStudents()" class="btn btn-primary">Wyszukaj z serwera</button>
+    <button (click)="switchView()" class="btn btn-success">Przełącz widok</button>
+</div>
+
+<table *ngIf="isListVisible == false" class="table table-hover">
     <thead>
         <tr>
             <th>Id studenta</th>
@@ -9,7 +14,9 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let student of students">
+        <tr *ngFor="let student of students" 
+            [ngClass]="{'table-danger':student.id > 7,
+            'table-warning': student.name == 'Leanne Graham'}">
             <td>{{student.id}}</td>
             <td>{{student.name}}</td>
             <td>{{student.email}}</td>
@@ -17,7 +24,9 @@
     </tbody>
 </table>
 
-<div *ngFor="let student of students">
-    <p><strong>imię i nazwisko:</strong>{{student.name}}</p>
-    <p><strong>email:</strong>{{student.email}}</p>
+<div *ngIf="isListVisible == true">
+    <div *ngFor="let student of students">
+        <p><strong>imię i nazwisko:</strong>{{student.name}}</p>
+        <p><strong>email:</strong>{{student.email}}</p>
+    </div>
 </div>
