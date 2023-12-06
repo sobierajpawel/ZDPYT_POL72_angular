@@ -1,1 +1,37 @@
-<p>add-student works!</p>
+<h4>Dodaj nowego studenta</h4>
+
+<form>
+    <div>
+        <label class="form-label">Imię i nazwisko</label>
+        <input class="form-control" 
+        name="xyz"
+        [(ngModel)]="fullName"
+        type="text" />
+    </div>
+
+    <div>
+        <label class="form-label">Email</label>
+        <input 
+        [(ngModel)]="email"
+        name="email"
+        class="form-control" type="text" />
+    </div>
+
+    <div style="margin-top:20px">
+        <button 
+        [disabled]="isSaving"
+        (click)="save()"
+        class="btn btn-success">Zapisz</button>
+        <button 
+        (click)="log()"
+        class="btn btn-primary">Wyświetl w konsoli</button>
+    </div>
+</form>
+
+<div *ngIf="isValidationError == true" style="margin-top:20px" class="alert alert-danger">
+   {{ validationDetails }}
+</div>
+
+<div style="margin-top:20px" *ngIf="isSuccessSent" class="alert alert-success">
+    Zapisano studenta!
+</div>
